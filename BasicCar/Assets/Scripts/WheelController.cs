@@ -4,7 +4,27 @@ using UnityEngine;
 
 public class WheelController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private WheelCollider frontRight;
+    [SerializeField] private WheelCollider frontLeft;
+    [SerializeField] private WheelCollider backRight;
+    [SerializeField] private WheelCollider backLeft;
+
+    public float acceleration = 500f;
+    public float brake = 1000f;
+
+    private float currentAcceleration = 0f;
+    private float currentBrake = 0f;
+
+    private void FixedUpdate()
+    {
+        // Get forward/backward acceleration
+        if (Input.GetKey(Input.GetAxis("Vertical"))
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * acceleration);
+        }
+    )
+}
+    
     void Start()
     {
         
