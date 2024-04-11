@@ -11,16 +11,18 @@ public class WheelController : MonoBehaviour
 
     public float acceleration = 500f;
     public float brake = 1000f;
+    public float maxTurnAngle = 15;
 
-    public float currentAcceleration = 0f;
-    public float currentBrake = 0f;
+    private float currentAcceleration = 0f;
+    private float currentBrake = 0f;
+    private float currentTurnAngle = 0;
 
 
     private void FixedUpdate()
     {
         // Get forward/backward acceleration
         currentAcceleration = Input.GetAxis("Vertical") * acceleration;
-        //transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * acceleration);
+        currentTurnAngle = Input.GetAxis("Horizontal") * maxTurnAngle; 
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -36,16 +38,9 @@ public class WheelController : MonoBehaviour
         
         frontRight.brakeTorque = currentBrake;
         frontLeft.brakeTorque = currentBrake;
+
+        frontLeft.steerAngle = currentTurnAngle;
+        frontRight.steerAngle = currentTurnAngle;
     }
     
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
