@@ -1768,6 +1768,7 @@ GameObject:
   - component: {fileID: 3088243108530943527}
   - component: {fileID: 3088243108532040935}
   - component: {fileID: 3088243108541520359}
+  - component: {fileID: 3088243108541520360}
   m_Layer: 0
   m_Name: CICADA_HI
   m_TagString: Untagged
@@ -2196,6 +2197,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3088243108541520360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3088243108534233639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd6b43ffc5cb4962963783aa87b7dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontRight: {fileID: 1168837443}
+  frontLeft: {fileID: 1485729040}
+  backRight: {fileID: 1138436007}
+  backLeft: {fileID: 459820214}
+  acceleration: 500
+  brake: 1000
+  verticalInput: 0
 --- !u!1001 &3215651180830595998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2432,6 +2452,7 @@ GameObject:
   - component: {fileID: 6095076138044962877}
   - component: {fileID: 2337001628059011892}
   - component: {fileID: 6271819335930074601}
+  - component: {fileID: 6271819335930074602}
   m_Layer: 0
   m_Name: DOOR_R_MATTE
   m_TagString: Untagged
@@ -2568,6 +2589,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6271819335930074602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5261006518457991118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd6b43ffc5cb4962963783aa87b7dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontRight: {fileID: 0}
+  frontLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  backLeft: {fileID: 0}
+  acceleration: 500
+  brake: 1000
+  verticalInput: 0
 --- !u!33 &6330022130217793236
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2687,7 +2727,7 @@ GameObject:
   - component: {fileID: 577660797}
   - component: {fileID: 577660796}
   m_Layer: 0
-  m_Name: CICADA_PARENT
+  m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

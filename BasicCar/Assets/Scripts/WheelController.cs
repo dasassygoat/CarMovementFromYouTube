@@ -12,18 +12,31 @@ public class WheelController : MonoBehaviour
     public float acceleration = 500f;
     public float brake = 1000f;
 
-    private float currentAcceleration = 0f;
-    private float currentBrake = 0f;
+    public float currentAcceleration = 0f;
+    public float currentBrake = 0f;
+
 
     private void FixedUpdate()
     {
         // Get forward/backward acceleration
-        if (Input.GetKey(Input.GetAxis("Vertical"))
+        currentAcceleration = Input.GetAxis("Vertical") * acceleration;
+        //transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * acceleration);
+
+        if (Input.GetKey(KeyCode.Space))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * acceleration);
+            currentBrake = brake;
         }
-    )
-}
+        else
+        {
+            currentBrake = 0f;
+        }
+        
+        frontRight.motorTorque = currentAcceleration;
+        frontLeft.motorTorque = currentAcceleration;
+        
+        frontRight.brakeTorque = currentBrake;
+        frontLeft.brakeTorque = currentBrake;
+    }
     
     void Start()
     {
